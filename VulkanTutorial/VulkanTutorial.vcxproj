@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.0\Include;D:\JustCode\VulkanTutorial\external\glfw\include;D:\JustCode\VulkanTutorial\external\stb;D:\JustCode\VulkanTutorial\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JustCode\VulkanTutorial\external\tinyobjloader-release;C:\VulkanSDK\1.3.204.0\Include;D:\JustCode\VulkanTutorial\external\glfw\include;D:\JustCode\VulkanTutorial\external\stb;D:\JustCode\VulkanTutorial\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\VulkanSDK\1.3.204.0\Include;D:\JustCode\VulkanTutorial\external\glfw\include;D:\JustCode\VulkanTutorial\external\stb;D:\JustCode\VulkanTutorial\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\JustCode\VulkanTutorial\external\tinyobjloader-release;C:\VulkanSDK\1.3.204.0\Include;D:\JustCode\VulkanTutorial\external\glfw\include;D:\JustCode\VulkanTutorial\external\stb;D:\JustCode\VulkanTutorial\external\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
