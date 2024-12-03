@@ -7,32 +7,14 @@ const uint32_t HEIGHT = 600;
 
 class HelloTriangleApplication {
  public:
-  void run() {
-    initVulkan();
-    mainLoop();
-    cleanup();
-  }
+  void run();
 
  private:
   GLFWwindow* window;
-  void initVulkan() {
-    if (!glfwInit()) {
-      throw std::runtime_error("Failed to initialize GLFW");
-    }
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-   
-    window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", nullptr, nullptr);
+  VkInstance instance;
+  void initVulkan();
+  void mainLoop();
+  void cleanup();
 
-  }
-  void mainLoop() {
-    while (!glfwWindowShouldClose(window)) {
-      glfwPollEvents();
-    }
-  }
-  void cleanup() {
-    glfwDestroyWindow(window);
-
-    glfwTerminate();
-  }
+  void createInstance();
 };
