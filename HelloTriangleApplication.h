@@ -2,17 +2,21 @@
 #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
-#include <optional>
 #include <iostream>
+#include <optional>
 #include <stdexcept>
 #include <vector>
+#include <set>
 
 const uint32_t WIDTH = 800;
 const uint32_t HEIGHT = 600;
 struct QueueFamilyIndices {
   std::optional<uint32_t> graphicsFamily;
+  std::optional<uint32_t> presentFamily;
 
-  bool isComplete() { return graphicsFamily.has_value(); }
+  bool isComplete() {
+    return graphicsFamily.has_value() && presentFamily.has_value();
+  }
 };
 
 class HelloTriangleApplication {
@@ -22,10 +26,12 @@ class HelloTriangleApplication {
  private:
   GLFWwindow* window;
   VkInstance instance;
+  VkSurfaceKHR surface;
   VkDebugUtilsMessengerEXT debugMessenger;
   VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
   VkDevice device;
   VkQueue graphicsQueue;
+  VkQueue presentQueue;
   const std::vector<const char*> validationLayers = {
       "VK_LAYER_KHRONOS_validation"};
 
@@ -71,6 +77,7 @@ class HelloTriangleApplication {
   bool isDeviceSuitable(VkPhysicalDevice device);
   void pickPhysicalDevice();
   void createLogicalDevice();
+  void createSurface();
 
   QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
 };
