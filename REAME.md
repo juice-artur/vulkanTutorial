@@ -1,6 +1,6 @@
 # How to draw triangle
 
-- CreateVkInstance
+- Create VkInstance
 - Select a supported video card (VkPhysicalDevice).
 - Create a VkDevice and VkQueue for drawing and presentation.
 - Create window, window surface and swap chain
