@@ -102,4 +102,5 @@ class HelloTriangleApplication {
   VkExtent2D chooseSwapExtent(const VkSurfaceCapabilitiesKHR& capabilities);
   void createSwapChain();
   void createImageViews();
+  void createGraphicsPipeline();
 };
