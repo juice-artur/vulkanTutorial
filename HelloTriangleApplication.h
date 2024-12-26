@@ -70,6 +70,12 @@ class HelloTriangleApplication {
   VkRenderPass renderPass;
   VkPipelineLayout pipelineLayout;
   VkPipeline graphicsPipeline;
+  std::vector<VkFramebuffer> swapChainFramebuffers;
+  VkCommandPool commandPool;
+  VkCommandBuffer commandBuffer;
+  VkSemaphore imageAvailableSemaphore;
+  VkSemaphore renderFinishedSemaphore;
+  VkFence inFlightFence;
 
 #ifdef NDEBUG
   const bool enableValidationLayers = false;
@@ -127,4 +133,10 @@ class HelloTriangleApplication {
   void createGraphicsPipeline();
   void createRenderPass();
   VkShaderModule createShaderModule(const std::vector<char>& code);
+  void createFramebuffers();
+  void createCommandPool();
+  void createCommandBuffer();
+  void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
+  void createSyncObjects();
+  void drawFrame();
 };
