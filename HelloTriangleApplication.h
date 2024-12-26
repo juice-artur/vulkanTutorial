@@ -67,6 +67,9 @@ class HelloTriangleApplication {
       VK_KHR_SWAPCHAIN_EXTENSION_NAME};
 
   std::vector<VkImageView> swapChainImageViews;
+  VkRenderPass renderPass;
+  VkPipelineLayout pipelineLayout;
+  VkPipeline graphicsPipeline;
 
 #ifdef NDEBUG
   const bool enableValidationLayers = false;
@@ -122,5 +125,6 @@ class HelloTriangleApplication {
   void createSwapChain();
   void createImageViews();
   void createGraphicsPipeline();
+  void createRenderPass();
   VkShaderModule createShaderModule(const std::vector<char>& code);
 };
